@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body
+{ display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image:url("../images/background.jpeg");
+  background-size: 100%;
+}
+
+body::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: -1;
+}
+body:active .earth
+{
+  position: absolute;
+  top: 1000%;
+  left: 50%;
+  transition: 45s;
+}
+body:active .spacecraft
+{
+  position: absolute;
+  top:10%;
+
+  left: 42%;
+  transform: translate(-50%, -50%);
+  transition: 15s;
+  height: 300px;
+}
+
+body .moon
+{
+  position:absolute;
+
+  top: 10%;
+  bottom:50%;
+  left: 50%;
+}
+body .uranus{
+  position: relative;
+  height:200px;
+  right: 250%;
+  bottom:70%;
+}
+
+body:active
+{
+  animation: animate 0s linear infinite;
+}
+@keyframes animate
+{
+  0%
+  {
+    background-position-y: 0px;
+  }
+  100%
+  {
+    background-position-y: 4500px;
+  }
+}
+
+
+.spacecraft{
+position:absolute;
+display: flex;
+height: 200px;
+top:40%;
+left: 42%;
+
+animation:thrutle 0.0s alternate infinite;
+
+}
+.star{
+    position: relative;
+top:-250px;
+animation: starfall linear infinite;
+}
+
+@keyframes thrutle{
+    from{
+        transform: translate(-2px);
+        
+    }
+    to{
+        transform:translate(2px);
+        
+        
+    }
+}
+
+@keyframes starfall{
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform:translate(150vh);
+    }
+}
+
+.earth
+{
+position: absolute;
+height: 320px;
+top:80%;
+left:50%;
+transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+@keyframes fadeInOut {
+  0%, 100% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+}
+
+.dialog-box {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(249, 248, 248, 0.8);
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+.show-dialog {
+  animation: fadeInOut 2s ease-out;
+}
+#moonplode{
+  width:150px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
